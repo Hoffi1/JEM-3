@@ -33,16 +33,6 @@ $params = $params->toArray();
 	window.addEvent('domready', function(){
 	checkmaxplaces();
 
-	/**
-	 document.formvalidator.setHandler('category', function(value) {
-		 if ( $("cid").selectedIndex == -1 ) {
-				alert("<?php echo JText::_( 'SELECT CATEGORY', true ); ?>");
-				validator.handleResponse(false,form.cid);
-				return false;
-		 }
-	});
-	**/
-
 	$("jform_attribs_event_show_mapserv").addEvent('change', testmap);
 
 	var mapserv = $("jform_attribs_event_show_mapserv");
@@ -162,10 +152,10 @@ $params = $params->toArray();
 	<?php if ($this->item->recurrence_groupcheck) { ?>
 		<fieldset class="form-horizontal alert">
 				<p>
-				This event is part of a recurring set...
+				<?php echo nl2br(JText::_('COM_JEM_EVENT_WARN_RECURRENCE_TEXT')); ?>
 				</p>
 				
-				<button class="btn" type="button" value="<?php echo JText::_('COM_JEM_EVENT_RECURRENCE_REMOVEFROMSET');?>" class="buttonset" onclick="Joomla.submitbutton('event.removefromset')">Remove from set</button>
+				<button class="btn" type="button" value="<?php echo JText::_('COM_JEM_EVENT_RECURRENCE_REMOVEFROMSET');?>" onclick="Joomla.submitbutton('event.removefromset')"><?php echo JText::_('COM_JEM_EVENT_RECURRENCE_REMOVEFROMSET');?></button>
 				
 		</fieldset>
 		<?php } ?>
