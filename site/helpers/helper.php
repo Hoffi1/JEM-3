@@ -1514,7 +1514,10 @@ class JemHelper {
 		$vcal->setProperty("X-WR-CALDESC", "Calendar Description");
 
 		$xprops = array( "X-LIC-LOCATION" => $timezone_name );
-		iCalUtilityFunctions::createTimezone( $vcal, $timezone_name, $xprops);
+		
+		if ($timezone_name != 'UTC') {
+			iCalUtilityFunctions::createTimezone( $vcal, $timezone_name, $xprops);
+		}
 
 		return $vcal;
 	}
