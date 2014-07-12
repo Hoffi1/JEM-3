@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" client="site" method="upgrade">
+<extension type="module" version="3.1" client="site" method="upgrade">
 	<name>mod_jem_teaser</name>
 	<author>JEM Community</author>
 	<authorEmail>info@joomlaeventmanager.net</authorEmail>
 	<authorUrl>http://www.joomlaeventmanager.net</authorUrl>
-	<creationDate>13 October 2012</creationDate>
+	<creationDate>15 July 2014</creationDate>
 	<copyright>copyright (C) 2013-2014 joomlaeventmanager.net</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>1.9.6</version>
+	<version>3.0.1</version>
 	<description>MOD_JEM_TEASER_XML_DESCRIPTION</description>
 
 	<files>
@@ -60,6 +60,7 @@
 					default="0"
 					label="MOD_JEM_TEASER_ALLOW_LINEBREAK"
 					description="MOD_JEM_TEASER_ALLOW_LINEBREAK_DESC"
+					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
@@ -68,6 +69,7 @@
 					default="1"
 					label="MOD_JEM_TEASER_LINK_TO_DETAILS"
 					description="MOD_JEM_TEASER_LINK_TO_DETAILS_DESC"
+					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
@@ -76,6 +78,7 @@
 					default="1"
 					label="MOD_JEM_TEASER_LINK_TO_CATEGORY"
 					description="MOD_JEM_TEASER_LINK_TO_CATEGORY_DESC"
+					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
@@ -84,6 +87,7 @@
 					default="1"
 					label="MOD_JEM_TEASER_LINK_TO_VENUE"
 					description="MOD_JEM_TEASER_LINK_TO_VENUE_DESC"
+					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
@@ -92,6 +96,7 @@
 					default="0"
 					label="MOD_JEM_TEASER_USE_MODAL"
 					description="MOD_JEM_TEASER_USE_MODAL_DESC"
+					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
