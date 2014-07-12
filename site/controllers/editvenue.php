@@ -242,7 +242,7 @@ class JEMControllerEditvenue extends JControllerForm
 	{
 
 	$task = $this->getTask();
-	if ($task == 'save') {
+	if ($task == 'save' || $task == 'apply') {
 		// doesn't work on new venues - get values from model instead
 		//$isNew 	= ($validData['id']) ? false : true;
 		//$id 	= $validData['id'];
