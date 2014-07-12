@@ -118,15 +118,10 @@ $settings	= json_decode($this->item->attribs);
 		</div>		
 	</fieldset>
 	<?php } ?>			
-			
-			
-			
+					
 <!-- TABS -->
 <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
 <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', JText::_('COM_JEM_EDITEVENT_INFO_TAB', true)); ?>	
-
-<?php // echo JHtml::_('tabs.start', 'editevent'.$this->item->id); ?>
-<?php // echo JHtml::_('tabs.panel',JText::_('COM_JEM_EDITEVENT_INFO_TAB'), 'editevent-infotab' ); ?>
 
 			<fieldset class="form-horizontal">
 				<legend><span class="legendcolor"><?php echo JText::_('COM_JEM_EDITEVENT_DETAILS_LEGEND'); ?></span></legend>
@@ -259,7 +254,6 @@ $settings	= json_decode($this->item->attribs);
 			
 			<?php 
 			if ($this->settings->get('editevent_show_attachmentstab',1)) {
-				//echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB'), 'event-attachments' ); 
 				echo JHtml::_('bootstrap.addTab', 'myTab', 'attachments', JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB', true));
 				echo $this->loadTemplate('attachments'); 
 				echo JHtml::_('bootstrap.endTab');
@@ -268,7 +262,6 @@ $settings	= json_decode($this->item->attribs);
 		
 			<?php
 			if ($this->settings->get('editevent_show_othertab',1)) { 
-				//echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_OTHER_TAB'), 'event-other' ); 
 				echo JHtml::_('bootstrap.addTab', 'myTab', 'other', JText::_('COM_JEM_EVENT_OTHER_TAB', true)); 
 				echo $this->loadTemplate('other'); 
 				echo JHtml::_('bootstrap.endTab');
