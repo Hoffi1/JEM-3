@@ -1,0 +1,24 @@
+/**
+ * @version 3.0.1
+ * @package JEM
+ * @copyright (C) 2013-2014 joomlaeventmanager.net
+ * @copyright (C) 2005-2009 Christoph Lukes
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+#geocomplete {
+}
+
+input#geocomplete {
+	height:	20px;
+}
+
+input.geobutton {
+	height:	24px;
+	cursor:	pointer;
+}
+
+.map_canvas {
+	height:	250px;
+	margin:	10px 20px 10px 0px;
+}

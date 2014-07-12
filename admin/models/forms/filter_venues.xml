@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_JEM_GLOBAL_FIELD_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="published"
+			type="list"
+			label="COM_JEM_GLOBAL_FIELD_FILTER_PUBLISHED"
+			description="COM_JEM_GLOBAL_FIELD_FILTER_PUBLISHED_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="1">JPUBLISHED</option>
+		</field>
+		<field
+			name="access"
+			type="accesslevel"
+			label="JOPTION_FILTER_ACCESS"
+			description="JOPTION_FILTER_ACCESS_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_ACCESS</option>
+		</field>
+		<field
+			name="filtertype"
+			type="list"
+			label="COM_JEM_GLOBAL_FIELD_FILTER_FILTERTYPE"
+			description="COM_JEM_GLOBAL_FIELD_FILTER_FILTERTYPE_DESC"
+			>
+			<option value="">- Select Filtertype -</option>
+			<option value="1">COM_JEM_EVENT_TITLE</option>
+			<option value="3">COM_JEM_CITY</option>
+			<option value="5">COM_JEM_STATE</option>
+			<option value="6">COM_JEM_COUNTRY</option>
+			<option value="7">JALL</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="COM_JEM_GLOBAL_FIELD_LIST_FULL_ORDERING"
+			description="COM_JEM_GLOBAL_FIELD_LIST_FULL_ORDERING_DESC"
+			onchange="this.form.submit();"
+			default="a.title ASC"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+			<option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+			<option value="a.published ASC">JSTATUS_ASC</option>
+			<option value="a.published DESC">JSTATUS_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+			<option value="a.venue ASC">COM_JEM_GLOBAL_FIELD_FILTER_VENUE_ASC</option>
+			<option value="a.venue DESC">COM_JEM_GLOBAL_FIELD_FILTER_VENUE_DESC</option>
+			<option value="a.city ASC">COM_JEM_GLOBAL_FIELD_FILTER_CITY_ASC</option>
+			<option value="a.city DESC">COM_JEM_GLOBAL_FIELD_FILTER_CITY_DESC</option>
+			<option value="a.state ASC">COM_JEM_GLOBAL_FIELD_FILTER_STATE_ASC</option>
+			<option value="a.state DESC">COM_JEM_GLOBAL_FIELD_FILTER_STATE_DESC</option>
+			<option value="a.alias ASC">COM_JEM_GLOBAL_FIELD_FILTER_ALIAS_ASC</option>
+			<option value="a.alias DESC">COM_JEM_GLOBAL_FIELD_FILTER_ALIAS_DESC</option>
+			<option value="a.country ASC">COM_JEM_GLOBAL_FIELD_FILTER_COUNTRY_ASC</option>
+			<option value="a.country DESC">COM_JEM_GLOBAL_FIELD_FILTER_COUNTRY_DESC</option>
+			<option value="assignedevents ASC">COM_JEM_GLOBAL_FIELD_FILTER_ASSIGNEDEVENTS_ASC</option>
+			<option value="assignedevents DESC">COM_JEM_GLOBAL_FIELD_FILTER_ASSIGNEDEVENTS_DESC</option>
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			class="inputbox input-mini"
+			default="25"
+			label="COM_JEM_GLOBAL_FIELD_LIST_LIMIT"
+			description="COM_GLOBAL_FIELD_LIST_LIMIT_DESC"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

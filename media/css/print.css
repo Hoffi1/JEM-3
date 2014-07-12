@@ -1,0 +1,127 @@
+/**
+ * @version 3.0.1
+ * @package JEM
+ * @copyright (C) 2013-2014 joomlaeventmanager.net
+ * @copyright (C) 2005-2009 Christoph Lukes
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+
+
+div#jem table a {
+       pointer-events: none;
+       cursor: default;
+}
+
+div#jem .image {
+	border: 0px !important;
+	background-color: white !important;
+}
+
+div#jem h2 {
+	border: 0px !important;
+}
+
+div#jem #jem_filter {
+	display:none;
+}
+
+div#jem div.info_container {
+	border: 0px !important;
+}
+
+div#jem	h2 {
+	font-size: 14pt !important;
+	margin-top: 25px !important;
+	background-color: white !important;
+}
+	
+header nav, footer {
+display: none;
+}
+
+@page {
+margin: 0.5cm;
+}
+
+body {
+font: 12pt Georgia, "Times New Roman", Times, serif;
+line-height: 1.3;
+}
+
+h1 {
+font-size: 24pt;
+}
+
+h2 {
+font-size: 14pt;
+margin-top: 25px;
+}
+
+aside h2 {
+font-size: 18pt;
+}
+
+
+	
+#main a:link, #main a:visited {
+	text-decoration: none !important;
+	color: inherit !important;
+}
+
+div#jem {
+	border: 0px !important;
+	background-color:white !important;
+}
+
+div#jem .info_container {
+	background-color: white !important;
+}
+
+div#jem .flyerimage {
+    border: none !important;
+}
+
+a[href]:after {
+	content: none !important;
+}	
+	
+div#jem .buttons {
+	display: none;
+}
+
+a[href]:after {
+	content: none !important;
+}
+
+abbr[title]:after {
+	content: none;
+}
+
+ .ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+	content: none;
+}
+
+a:link:after, a:visited:after {
+	content: none;
+}
+
+
+div#jem .flyerimage {
+    border: none;
+}
+
+div#jem .pagination {
+		display:none;
+	}
+
+/* additional, actual printing */
+@media print {
+
+	div#jem .icon-print {
+		display:none;
+	}
+	
+}

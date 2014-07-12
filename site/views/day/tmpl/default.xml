@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_JEM_DAY_VIEW_DEFAULT_TITLE">
+		<message>
+			<![CDATA[COM_JEM_DAY_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="days" type="text"
+				default="0"
+				size="2"
+				label="COM_JEM_DAYS_FIELD"
+				description="COM_JEM_DAYS_FIELD_DESC"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

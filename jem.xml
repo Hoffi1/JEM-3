@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+	<name>com_jem</name>
+	<creationDate>15 July 2014</creationDate>
+	<author>JEM Community</author>
+	<copyright>Copyright (C) 2013-2014 joomlaeventmanager.net</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@joomlaeventmanager.net</authorEmail>
+	<authorUrl>http://www.joomlaeventmanager.net</authorUrl>
+	<version>3.0.1</version>
+	<description>COM_JEM_INSTALLATION_DESCRIPTION</description>
+
+	<scriptfile>script.php</scriptfile>
+	<files folder="site">
+		<filename>jem.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+
+		<folder>classes</folder>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>layouts</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>language</folder>
+	</files>
+
+	<media folder="media" destination="com_jem">
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+	</update>
+
+	<administration>
+		<menu link="option=com_jem">COM_JEM</menu>
+
+		<submenu>
+			<menu link="option=com_jem&amp;view=main">COM_JEM_MENU_MAINMENU</menu>
+			<menu link="option=com_jem&amp;view=events">COM_JEM_MENU_EVENTS</menu>
+			<menu link="option=com_jem&amp;view=venues">COM_JEM_MENU_VENUES</menu>
+			<menu link="option=com_jem&amp;view=categories">COM_JEM_MENU_CATEGORIES</menu>
+			<menu link="option=com_jem&amp;view=groups">COM_JEM_MENU_GROUPS</menu>
+			<menu link="option=com_jem&amp;view=help">COM_JEM_MENU_HELP</menu>
+			<menu link="option=com_jem&amp;view=settings">COM_JEM_MENU_SETTINGS</menu>
+		</submenu>
+
+		<files folder="admin">
+			<filename>jem.php</filename>
+			<filename>controller.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+
+			<folder>assets</folder>
+			<folder>classes</folder>
+			<folder>help</folder>
+			<folder>helpers</folder>
+			<folder>views</folder>
+			<folder>models</folder>
+			<folder>controllers</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>language</folder>
+		</files>
+	</administration>
+
+	<updateservers>
+		<!--  TODO: Fix URL when feature is ready to use -->
+		<server type="extension" priority="1" name="JEM Update Site">http://www.joomlaeventmanager.net/update/jem-3-update.xml</server>
+	</updateservers>
+</extension>

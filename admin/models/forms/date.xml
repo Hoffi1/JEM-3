@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="details"
+		addfieldpath="/administrator/components/com_jem/models/fields"
+	>
+	<field name="date" type="text"
+			class="inputbox"
+			size="40"
+			label="COM_JEM_DATE_FIELD_DATE"
+			description="COM_JEM_DATE_FIELD_DATE_DESC"
+			required="false"
+		/>
+		<field name="date_range" type="radio"
+			class="btn-group btn-group-yesno"
+			label="COM_JEM_DATE_FIELD_DATERANGE"
+			description="COM_JEM_DATE_FIELD_DATERANGE_DESC"
+			required="false"
+		>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="date_startdate_range" type="calendar"
+			label="COM_JEM_DATE_FIELD_STARTDATE"
+			description="COM_JEM_DATE_FIELD_STARTDATE_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d"
+		/>
+		<field name="date_enddate_range" type="calendar"
+			label="COM_JEM_DATE_FIELD_ENDDATE"
+			description="COM_JEM_DATE_FIELD_ENDDATE_DESC"
+			class="inputbox"
+			size="22"
+			format="%Y-%m-%d"
+		/>
+		
+		<field name="id" type="text"
+			default="0"
+			readonly="true"
+			class="readonly"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/>
+		
+		<field name="holiday" type="radio"
+			class="btn-group btn-group-yesno"
+			label="COM_JEM_DATE_FIELD_HOLIDAY"
+			description="COM_JEM_DATE_FIELD_HOLIDAY_DESC"
+			required="false"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="date_name" type="text"
+			class="inputbox"
+			size="40"
+			label="COM_JEM_DATE_FIELD_DATENAME"
+			description="COM_JEM_DATE_FIELD_DATENAME_DESC"
+			required="false"
+		/>
+		<field name="calendar_name" type="text"
+			class="inputbox"
+			size="40"
+			label="COM_JEM_DATE_FIELD_CALENDAR_TEXT"
+			description="COM_JEM_DATE_FIELD_CALENDAR_TEXT_DESC"
+			required="false"
+		/>
+		<field name="enabled" type="radio"
+			class="btn-group btn-group-yesno"
+			label="COM_JEM_DATE_FIELD_ENABLED"
+			description="COM_JEM_DATE_FIELD_ENABLED_DESC"
+			required="false"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="calendar" type="radio"
+			class="btn-group btn-group-yesno"
+			label="COM_JEM_DATE_FIELD_CALENDAR"
+			description="COM_JEM_DATE_FIELD_CALENDAR_DESC"
+			required="false"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="calendaritemids" type="calendaritemids"
+			multiple="true"
+			class="inputbox"
+			size="10"
+			label="COM_JEM_FIELD_CATEGORIES"
+			labelclass=""
+			description="COM_JEM_FIELD_CATEGORIES"
+		/>
+	</fieldset>
+</form>
