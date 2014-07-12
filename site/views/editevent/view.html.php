@@ -179,6 +179,7 @@ class JemViewEditevent extends JViewLegacy
 		}
 		
 		JHtml::_('script', 'com_jem/seo.js', false, true);
+		JHtml::_('behavior.tabstate');
 
 		// Escape strings for HTML output
 		$this->pageclass_sfx = htmlspecialchars($item->params->get('pageclass_sfx'));
