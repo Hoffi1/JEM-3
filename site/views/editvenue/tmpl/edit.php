@@ -11,24 +11,10 @@ defined('_JEXEC') or die;
 JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
-jimport( 'joomla.html.html.tabs' );
 
 // Create shortcut to parameters.
 $params		= $this->item->params;
 //$settings = json_decode($this->item->attribs);
-
-$options = array(
-		'onActive' => 'function(title, description){
-        description.setStyle("display", "block");
-        title.addClass("open").removeClass("closed");
-    }',
-		'onBackground' => 'function(title, description){
-        description.setStyle("display", "none");
-        title.addClass("closed").removeClass("open");
-    }',
-		'startOffset' => 0,  // 0 starts on the first tab, 1 starts the second, etc...
-		'useCookie' => true, // this must not be a string. Don't use quotes.
-);
 
 # defining values for centering default-map
 $location = JemHelper::defineCenterMap($this->form);
@@ -235,10 +221,9 @@ $mapType = $this->mapType;
 			<?php endif; ?>
 			<p>&nbsp;</p>
 
-			<?php echo JHtml::_('tabs.start', 'editvenue'.$this->item->id, $options); ?>
-
-			<!--  VENUE-DETAILS TAB -->
-			<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EDITVENUE_INFO_TAB'), 'venue-details'); ?>
+<!-- TABS -->
+<?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
+<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', JText::_('COM_JEM_EDITVENUE_INFO_TAB', true)); ?>	
 
 			<fieldset class="form-horizontal">
 				<legend><?php echo JText::_('COM_JEM_EDITVENUE_DETAILS_LEGEND'); ?></legend>
@@ -382,16 +367,21 @@ $mapType = $this->mapType;
 					</div>
 					<?php endforeach; ?>
 			</fieldset>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
-			<!-- ATTACHMENTS TAB -->
-			<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EDITVENUE_ATTACHMENTS_TAB'), 'venue-attachments'); ?>
+<!-- ATTACHMENTS TAB -->
+			<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'attachments', JText::_('COM_JEM_EDITVENUE_ATTACHMENTS_TAB', true)); ?>
 			<?php echo $this->loadTemplate('attachments'); ?>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			
 
 			<!-- OTHER TAB -->
-			<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EDITVENUE_OTHER_TAB'), 'venue-other' ); ?>
+			<?php echo JHtml::_('bootstrap.addTab', 'myTab', 'other', JText::_('COM_JEM_EDITVENUE_OTHER_TAB', true)); ?>
 			<?php echo $this->loadTemplate('other'); ?>
-
-			<?php echo JHtml::_('tabs.end'); ?>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			<?php 
+			echo JHtml::_('bootstrap.endTabSet'); 
+			?>
 
 			<div class="clearfix"></div>
 			<input id="country" name="country" geo-data="country_short" type="hidden" value="">

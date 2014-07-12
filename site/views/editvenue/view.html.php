@@ -168,6 +168,7 @@ class JemViewEditvenue extends JViewLegacy
 		// JQuery scripts
 		$document->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 		JHtml::_('script', 'com_jem/jquery.geocomplete.js', false, true);
+		JHtml::_('behavior.tabstate');
 		
 		# retrieve mapType setting
 		$settings 		= JemHelper::globalattribs();
