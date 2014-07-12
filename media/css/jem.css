@@ -515,6 +515,48 @@ td.center,th.center,.center {
 }
 
 
+div#jem .nav-tabs > li > a,
+div#jem .nav-tabs > li > a:hover, 
+div#jem .nav-tabs > li > a:focus
+ {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 18px;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0px 0px;
+    border-color: black black transparent black;
+    background-color: #CECECE;
+    color:black;
+}
+
+div#jem #myTabContent {
+	background-color:white;
+	padding:10px;
+	border-color: #CECECE #CECECE #CECECE #CECECE;
+	border: 1px solid;
+}
+
+div#jem .nav {
+	margin-bottom: 0px;
+}
+
+
+div#jem .nav-tabs > .active > a, 
+div#jem .nav-tabs > .active > a:hover, 
+div#jem .nav-tabs > .active > a:focus {
+    color: #555;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black black transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    cursor: default;
+}
+
 .icon-cancel:before {
    /* color: #BD362F;*/
 }
