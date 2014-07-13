@@ -358,6 +358,12 @@ table.adminlist
 	border:1px solid #999999;
 }
 
+table.adminlist td {
+	padding-left:6px;
+	line-height:20px;
+}
+
+
 input#csvexport{
     background:#CCCCCC url('../images/export_excel2.png') no-repeat left;
     padding-left:24px;

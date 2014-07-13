@@ -59,17 +59,6 @@ if ($this->updatedata->failed == 0) {
 		  		</td>
 			</tr>
 			<tr>
-		  		<td><b><?php echo JText::_('COM_JEM_UPDATECHECK_CHANGES').':'; ?></b></td>
-		  		<td><ul>
-		  			<?php
-					foreach ($this->updatedata->changes as $change) {
-   						echo '<li>'.$change.'</li>';
-					}
-					?>
-					</ul>
-		  		</td>
-			</tr>
-			<tr>
 		  		<td><b><?php echo JText::_('COM_JEM_UPDATECHECK_INFORMATION').':'; ?></b></td>
 		  		<td>
 					<a href="<?php echo $this->updatedata->info; ?>" target="_blank"><?php echo JText::_('COM_JEM_UPDATECHECK_INFORMATION'); ?></a>
