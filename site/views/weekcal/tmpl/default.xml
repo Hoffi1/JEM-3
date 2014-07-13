@@ -22,6 +22,7 @@
 				default="0"
 				label="COM_JEM_DISPLAY_INTROTEXT"
 				description="COM_JEM_DISPLAY_INTROTEXT_DESC"
+				class="btn-group btn-group-yesno"
 			>
 				<option value="0">COM_JEM_HIDE</option>
 				<option value="1">COM_JEM_SHOW</option>
@@ -67,6 +68,7 @@
 				default="1"
 				label="COM_JEM_DISPLAY_LEGEND"
 				description="COM_JEM_DISPLAY_LEGEND_DESC"
+				class="btn-group btn-group-yesno"
 			>
 				<option value="0">JNO</option>
 				<option value="1">JYES</option>
@@ -75,6 +77,7 @@
 				default="1"
 				label="COM_JEM_SELECTFIRSTWEEKDAY"
 				description="COM_JEM_SELECTFIRSTWEEKDAYDESC"
+				class="btn-group btn-group-yesno"
 			>
 				<option value="0">COM_JEM_SUNDAY</option>
 				<option value="1">COM_JEM_MONDAY</option>
