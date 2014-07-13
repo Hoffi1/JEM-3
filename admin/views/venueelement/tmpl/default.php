@@ -9,8 +9,6 @@
 defined('_JEXEC') or die;
 
 $function = JRequest::getCmd('function', 'jSelectVenue');
-
-var_dump($function);
 ?>
 
 <form action="index.php?option=com_jem&amp;view=venueelement&amp;tmpl=component" method="post" name="adminForm" id="adminForm">

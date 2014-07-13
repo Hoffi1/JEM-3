@@ -9,9 +9,6 @@
 defined('_JEXEC') or die;
 
 $function = JRequest::getCmd('function', 'jSelectUser');
-
-var_dump($function);
-
 JHtml::_('bootstrap.tooltip');
 ?>
 
