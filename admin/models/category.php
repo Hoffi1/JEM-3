@@ -109,38 +109,7 @@ class JEMModelCategory extends JModelAdmin
 		return JTable::getInstance($type, $prefix, $config);
 	}
 
-	/**
-	 * Auto-populate the model state.
-	 *
-	 * Note. Calling getState in this method will result in recursion.
-	 *
-	 * @return void
-	 */
-	protected function populateStateDISABLED()
-	{
-		$app = JFactory::getApplication('administrator');
-		
-		$parentId = JRequest::getInt('parent_id');
-		$this->setState('category.parent_id', $parentId);
-		
-		// Load the User state.
-		$pk = (int) JRequest::getInt('id');
-		$this->setState($this->getName() . '.id', $pk);
-		
-		$extension = JRequest::getCmd('extension', 'com_jem');
-		$this->setState('category.extension', $extension);
-		$parts = explode('.', $extension);
-		
-		// Extract the component name
-		$this->setState('category.component', $parts[0]);
-		
-		// Extract the optional section name
-		$this->setState('category.section', (count($parts) > 1) ? $parts[1] : null);
-		
-		// Load the parameters.
-		$params = JComponentHelper::getParams('com_jem');
-		$this->setState('params', $params);
-	}
+	
 
 	/**
 	 * Method to get a category.
@@ -227,20 +196,6 @@ class JEMModelCategory extends JModelAdmin
 		return $form;
 	}
 
-	/**
-	 * A protected method to get the where clause for the reorder
-	 * This ensures that the row will be moved relative to a row with the same
-	 * extension
-	 *
-	 * @param JCategoryTable $table Current table instance
-	 *       
-	 * @return array An array of conditions to add to add to ordering queries.
-	 *        
-	 */
-	protected function getReorderConditionsDISABLED($table)
-	{
-		return 'extension = ' . $this->_db->Quote($table->extension);
-	}
 
 	/**
 	 * Method to get the data that should be injected in the form.
@@ -260,87 +215,6 @@ class JEMModelCategory extends JModelAdmin
 		return $data;
 	}
 
-	/**
-	 * Method to preprocess the form.
-	 *
-	 * @param JForm $form A JForm object.
-	 * @param mixed $data The data expected for the form.
-	 * @param string $groups The name of the plugin group to import.
-	 *       
-	 * @return void
-	 *
-	 * @see JFormField
-	 * @throws Exception if there is an error in the form event.
-	 */
-	protected function preprocessFormDISABLED(JForm $form, $data, $group = 'content')
-	{
-		jimport('joomla.filesystem.path');
-		
-		// Initialise variables.
-		$lang = JFactory::getLanguage();
-		$extension = $this->getState('category.extension');
-		$component = $this->getState('category.component');
-		$section = $this->getState('category.section');
-		
-		// Get the component form if it exists
-		jimport('joomla.filesystem.path');
-		$name = 'category' . ($section ? ('.' . $section) : '');
-		
-		// Looking first in the component models/forms folder
-		$path = JPath::clean(JPATH_ADMINISTRATOR . "/components/$component/models/forms/$name.xml");
-		
-		// Old way: looking in the component folder
-		if (!file_exists($path)) {
-			$path = JPath::clean(JPATH_ADMINISTRATOR . "/components/$component/$name.xml");
-		}
-		
-		if (file_exists($path)) {
-			$lang->load($component, JPATH_BASE, null, false, false);
-			$lang->load($component, JPATH_BASE, $lang->getDefault(), false, false);
-			$lang->load($component, JPATH_BASE . '/components/' . $component, null, false, false);
-			$lang->load($component, JPATH_BASE . '/components/' . $component, $lang->getDefault(), false, false);
-			
-			if (!$form->loadFile($path, false)) {
-				throw new Exception(JText::_('JERROR_LOADFILE_FAILED'));
-			}
-		}
-		
-		// Try to find the component helper.
-		$eName = str_replace('com_', '', $component);
-		$path = JPath::clean(JPATH_ADMINISTRATOR . "/components/$component/helpers/category.php");
-		
-		if (file_exists($path)) {
-			require_once $path;
-			$cName = ucfirst($eName) . ucfirst($section) . 'HelperCategory';
-			
-			if (class_exists($cName) && is_callable(array(
-					$cName,
-					'onPrepareForm'
-			))) {
-				$lang->load($component, JPATH_BASE, null, false, false) || $lang->load($component, JPATH_BASE . '/components/' . $component, null, false, false) ||
-						 $lang->load($component, JPATH_BASE, $lang->getDefault(), false, false) || $lang->load($component, JPATH_BASE . '/components/' . $component, $lang->getDefault(), false, false);
-				call_user_func_array(array(
-						$cName,
-						'onPrepareForm'
-				), array(
-						&$form
-				));
-				
-				// Check for an error.
-				if ($form instanceof Exception) {
-					$this->setError($form->getMessage());
-					return false;
-				}
-			}
-		}
-		
-		// Set the access control rules field component value.
-		$form->setFieldAttribute('rules', 'component', $component);
-		$form->setFieldAttribute('rules', 'section', $name);
-		
-		// Trigger the default form events.
-		parent::preprocessForm($form, $data, $group);
-	}
 
 	/**
 	 * Method to save the form data.
@@ -348,8 +222,6 @@ class JEMModelCategory extends JModelAdmin
 	 * @param array $data The form data.
 	 *       
 	 * @return boolean True on success.
-	 *        
-	 * @since 1.6
 	 */
 	public function save($data)
 	{
