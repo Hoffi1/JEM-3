@@ -17,7 +17,7 @@ class JemViewCategory extends JViewLegacy
 	/**
 	 * Creates the Event Feed of the Category
 	 */
-	function display()
+	function display($tpl=null)
 	{
 		$app = JFactory::getApplication();
 		$doc = JFactory::getDocument();
