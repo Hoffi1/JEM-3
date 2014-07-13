@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 
-
+JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.modal', 'a.flyermodal');
 $link = 'index.php?option=com_jem&amp;view=userelement&amp;tmpl=component&amp;function=jSelectUser';
 ?>

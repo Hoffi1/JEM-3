@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die;
 
+
 /**
- * Category View
+ * View: Category
  */
 class JemViewCategory extends JViewLegacy
 {

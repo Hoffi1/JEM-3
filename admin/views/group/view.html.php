@@ -6,16 +6,11 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * View class Group
- *
- * @package Joomla
- * @subpackage JEM
- *
+ * View: Group
  */
 class JEMViewGroup extends JViewLegacy {
 
@@ -25,7 +20,6 @@ class JEMViewGroup extends JViewLegacy {
 
 	public function display($tpl = null)
 	{
-		// Initialise variables.
 		$this->form	 = $this->get('Form');
 		$this->item	 = $this->get('Item');
 		$this->state = $this->get('State');
@@ -36,11 +30,6 @@ class JEMViewGroup extends JViewLegacy {
 			return false;
 		}
 
-		JHtml::_('behavior.modal', 'a.modal');
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.formvalidation');
-
-		//initialise variables
 		$jemsettings = JEMHelper::config();
 		$document	= JFactory::getDocument();
 		$this->settings	= JEMAdmin::config();

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Event View
+ * View: Date
  */
 class JEMViewDate extends JViewLegacy {
 
@@ -31,11 +31,8 @@ class JEMViewDate extends JViewLegacy {
 			return false;
 		}
 		JHtml::_('behavior.framework');
-		JHtml::_('behavior.modal', 'a.modal');
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.formvalidation');
-
-		//initialise variables
+		
+		// initialise variables
 		$jemsettings 	= JEMHelper::config();
 		$document		= JFactory::getDocument();
 		$this->settings	= JEMAdmin::config();

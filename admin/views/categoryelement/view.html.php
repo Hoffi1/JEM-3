@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Categoryelement-View
+ * View: Categoryelement
  */
 class JemViewCategoryelement extends JViewLegacy {
 
@@ -28,7 +28,7 @@ class JemViewCategoryelement extends JViewLegacy {
 		$search 			= $app->getUserStateFromRequest('com_jem.categoryelement.'.$itemid.'.filter_search', 'filter_search', '', 'string');
 		$search 			= $db->escape(trim(JString::strtolower($search)));
 
-		//prepare document
+		// prepare document
 		$document->setTitle(JText::_('COM_JEM_SELECT_CATEGORY'));
 		
 		// Load css
@@ -38,7 +38,7 @@ class JemViewCategoryelement extends JViewLegacy {
 		$rows = $this->get('Data');
 		$pagination = $this->get('Pagination');
 
-		//publish unpublished filter
+		// publish/unpublished filter
 		$lists['state'] = JHtml::_('grid.state', $filter_state);
 
 		// table ordering
@@ -48,7 +48,7 @@ class JemViewCategoryelement extends JViewLegacy {
 		// search filter
 		$lists['search']= $search;
 
-		//assign data to template
+		// assign data to template
 		$this->lists 		= $lists;
 		$this->filter_state = $filter_state;
 		$this->rows 		= $rows;

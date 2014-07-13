@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
@@ -30,6 +30,7 @@ $slidesOptions = array(
 		"active" => "date-slide1" // It is the ID of the active tab.
 );
 
+JHtml::_('behavior.modal', 'a.flyermodal');
 JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');

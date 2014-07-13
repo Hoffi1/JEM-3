@@ -6,18 +6,13 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * View class for the JEM Updatecheck screen
- *
- * @package JEM
- *
+ * View: Updatecheck
  */
 class JEMViewUpdatecheck extends JViewLegacy {
-
 
 	public function display($tpl = null)
 	{

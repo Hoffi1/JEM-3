@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die;
 
+
 /**
- * JEM Event Table
+ * Table: Date
  */
 class JEMTableDate extends JTable
 {

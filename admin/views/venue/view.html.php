@@ -10,11 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * View class Venue
- *
- * @package Joomla
- * @subpackage JEM
- *
+ * View: Venue
  */
 class JEMViewVenue extends JViewLegacy {
 
@@ -87,12 +83,8 @@ class JEMViewVenue extends JViewLegacy {
 				$type = '"terrain"';
 				break;
 		}
-		
-		
 		$this->mapType = $type;
 		
-		
-
 		$this->addToolbar();
 		parent::display($tpl);
 	}

@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die;
 
+
 /**
- * JEM Event Table
+ * Table: Event
  */
 class JEMTableEvent extends JTable
 {

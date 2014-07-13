@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Venueselect-View
+ * View: Venueelement
  */
 class JemViewVenueelement extends JViewLegacy {
 
@@ -18,22 +18,19 @@ class JemViewVenueelement extends JViewLegacy {
 	{
 		$app = JFactory::getApplication();
 
-		//initialise variables
+		// initialise variables
 		$db			= JFactory::getDBO();
 		$document	= JFactory::getDocument();
 		$itemid 	= JRequest::getInt('id', 0) . ':' . JRequest::getInt('Itemid', 0);
 
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.modal');
-
-		//get vars
+		// get vars
 		$filter_order		= $app->getUserStateFromRequest('com_jem.venueelement.'.$itemid.'.filter_order', 'filter_order', 'l.ordering', 'cmd');
 		$filter_order_Dir	= $app->getUserStateFromRequest('com_jem.venueelement.'.$itemid.'.filter_order_Dir', 'filter_order_Dir', '', 'word');
 		$filter_type 		= $app->getUserStateFromRequest('com_jem.venueelement.'.$itemid.'.filter_type', 'filter_type', '', 'int');
 		$search 			= $app->getUserStateFromRequest('com_jem.venueelement.'.$itemid.'.filter_search', 'filter_search', '', 'string');
 		$search 			= $db->escape(trim(JString::strtolower($search)));
 
-		//prepare document
+		// prepare document
 		$document->setTitle(JText::_('COM_JEM_SELECTVENUE'));
 		
 		// Load css
@@ -49,7 +46,7 @@ class JemViewVenueelement extends JViewLegacy {
 		$lists['order_Dir'] = $filter_order_Dir;
 		$lists['order'] = $filter_order;
 
-		//Build search filter
+		// Build search filter
 		$filters = array();
 		$filters[] = JHtml::_('select.option', '1', JText::_('COM_JEM_VENUE'));
 		$filters[] = JHtml::_('select.option', '2', JText::_('COM_JEM_CITY'));
@@ -59,7 +56,7 @@ class JemViewVenueelement extends JViewLegacy {
 		// search filter
 		$lists['search']= $search;
 
-		//assign data to template
+		// assign data to template
 		$this->lists		= $lists;
 		$this->rows			= $rows;
 		$this->pagination	= $pagination;

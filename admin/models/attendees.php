@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.model');
 
 /**
- * Model-Attendees
+ * Model: Attendees
  */
 class JemModelAttendees extends JModelLegacy
 {

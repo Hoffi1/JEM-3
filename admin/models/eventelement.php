@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.model');
 
 /**
- * Eventelement Model
+ * Model: Eventelement
  */
 class JemModelEventelement extends JModelLegacy
 {

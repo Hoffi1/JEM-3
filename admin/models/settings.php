@@ -9,9 +9,8 @@
 defined('_JEXEC') or die;
 
 
-
 /**
- * Model-Settings
+ * Model: Settings
  */
 class JEMModelSettings extends JModelForm
 {

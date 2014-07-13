@@ -1,20 +1,17 @@
 <?php
 /**
- * @version 1.9.5
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- *
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * Events-View
+ * View: Dates
  */
-
  class JEMViewDates extends JViewLegacy {
 
 	protected $items;
@@ -55,13 +52,7 @@ defined('_JEXEC') or die;
 		$document->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 		$document->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
 
-
-
-		//add style to description of the tooltip (hastip)
-		JHtml::_('behavior.tooltip');
-
-	
-		//assign data to template
+		// assign data to template
 		$this->user			= $user;
 		$this->jemsettings  = $jemsettings;
 		$this->settings		= $settings;

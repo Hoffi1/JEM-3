@@ -10,9 +10,8 @@ defined('_JEXEC') or die;
 
 
 /**
- * Events-View
+ * View: Events
  */
-
  class JEMViewEvents extends JViewLegacy {
 
 	protected $items;

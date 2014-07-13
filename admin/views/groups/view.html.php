@@ -10,9 +10,8 @@ defined('_JEXEC') or die;
 
 
 /**
- * Groups-View
+ * View: Groups
  */
-
  class JEMViewGroups extends JViewLegacy {
 
 	protected $items;
@@ -36,9 +35,6 @@ defined('_JEXEC') or die;
 
 		// Load css
 		JHtml::_('stylesheet', 'com_jem/backend.css', array(), true);
-
-		// add style to description of the tooltip (hastip)
-		JHtml::_('behavior.tooltip');
 
 		// assign data to template
 		$this->user			= $user;

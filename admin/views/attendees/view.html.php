@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * View-Attendees
+ * View: Attendees
  */
 class JemViewAttendees extends JViewLegacy {
 	public function display($tpl = null)

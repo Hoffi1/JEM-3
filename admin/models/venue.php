@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modeladmin');
 
 /**
- * Venue Model
+ * Model: Venue
  */
 class JEMModelVenue extends JModelAdmin
 {

@@ -6,32 +6,28 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * View class Export
- *
- * @package JEM
- *
+ * View: Export
  */
 class JEMViewExport extends JViewLegacy {
 
 	public function display($tpl = null) {
-		//Load pane behavior
+		// Load pane behavior
 		jimport('joomla.html.pane');
 
-		//initialise variables
+		// initialise variables
 		$document	= JFactory::getDocument();
 
 		// Load css
 		JHtml::_('stylesheet', 'com_jem/backend.css', array(), true);
 
-		//Cause of group limits we can't use class here to build the categories tree
+		// Cause of group limits we can't use class here to build the categories tree
 		$categories = $this->get('Categories');
 
-		//build selectlists
+		// build selectlists
 		$categories = JEMCategories::buildcatselect($categories, 'cid[]', null, 0, 'multiple="multiple" size="8 class="inputbox"');
 
 		$this->categories		= $categories;

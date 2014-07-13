@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Model-Help
+ * Model: Help
  */
 class JEMModelHelp extends JModelLegacy
 {

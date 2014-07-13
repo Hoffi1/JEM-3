@@ -10,11 +10,10 @@ defined('_JEXEC') or die;
 
 
 /**
- * View-Help
+ * View: Help
  */
 class JEMViewHelp extends JViewLegacy {
 
-	
 	protected $help_search = null;
 	protected $page = null;
 	protected $lang_tag = null;
@@ -22,7 +21,6 @@ class JEMViewHelp extends JViewLegacy {
 	
 	public function display($tpl = null) {
 	
-		
 		$this->help_search			= $this->get('HelpSearch');
 		$this->page					= $this->get('Page');
 		$this->toc					= $this->get('Toc');

@@ -8,15 +8,12 @@
  *
  * Based on: https://gist.github.com/dongilbert/4195504
  */
-
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.controlleradmin');
 
-
 /**
- * JEM Component Export Controller
- *
+ * Controller: Export
  */
 class JEMControllerExport extends JControllerAdmin {
 	/**

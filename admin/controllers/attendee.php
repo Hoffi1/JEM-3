@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Controller-Attendee
+ * Controller: Attendee
  */
 class JemControllerAttendee extends JControllerLegacy
 {

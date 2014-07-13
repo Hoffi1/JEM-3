@@ -6,16 +6,12 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.model');
 
 /**
- * JEM Component users Model
- *
- * @package JEM
- * 
+ * Model: Users
  */
 class JEMModelUsers extends JModelLegacy
 {

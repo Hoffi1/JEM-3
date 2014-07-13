@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
@@ -36,6 +36,7 @@ $options = array(
 		'startOffset' => 0,  // 0 starts on the first tab, 1 starts the second, etc...
 		'useCookie' => true, // this must not be a string. Don't use quotes.
 );
+JHtml::_('bootstrap.tooltip');
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_jem&view=events'); ?>" method="post" name="adminForm" id="adminForm">

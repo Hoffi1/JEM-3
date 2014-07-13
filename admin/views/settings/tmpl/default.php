@@ -6,18 +6,14 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  *
- * * @todo: move js to a file
+ * @todo: move js to a file
  */
-
 defined('_JEXEC') or die;
 
-// Load tooltips behavior
+
 JHtml::_('behavior.formvalidation');
-//JHtml::_('behavior.switcher');
 JHtml::_('bootstrap.tooltip');
-JHtml::_('formbehavior.chosen', 'select');
-JHtml::_('behavior.framework');
-JHtml::_('behavior.modal');
+JHtml::_('behavior.modal', 'a.flyermodal');
 ?>
 
 <script>

@@ -10,8 +10,8 @@ defined('_JEXEC') or die;
 
 
 /**
- * Model-Groups
- **/
+ * Model: Groups
+ */
 class JEMModelGroups extends JModelList
 {
 	/**

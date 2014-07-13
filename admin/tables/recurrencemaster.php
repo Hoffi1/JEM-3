@@ -1,6 +1,6 @@
 <?php
 /**
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2013 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die;
 
+
 /**
- * JEM Recurrence Table
+ * Table: Recurrence_master
  */
 class JEMTableRecurrencemaster extends JTable
 {
@@ -18,7 +19,7 @@ class JEMTableRecurrencemaster extends JTable
 	}
 
 	/**
-	 * Overloaded bind method for the Event table.
+	 * Bind
 	 */
 	public function bind($array, $ignore = ''){
 		
@@ -28,7 +29,7 @@ class JEMTableRecurrencemaster extends JTable
 
 
 	/**
-	 * overloaded check function
+	 * Check
 	 */
 	function check()
 	{
@@ -37,7 +38,7 @@ class JEMTableRecurrencemaster extends JTable
 	}
 
 	/**
-	 * store method for the Event table.
+	 * Store
 	 */
 	public function store($updateNulls = true)
 	{

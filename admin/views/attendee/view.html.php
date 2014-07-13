@@ -6,41 +6,33 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
-
 /**
- * View class for the JEM attendee screen
- *
- * @package JEM
- *
+ * View: Attendee
  */
 class JEMViewAttendee extends JViewLegacy {
 
 	public function display($tpl = null)
 	{
-		//initialise variables
+		// initialise variables
 		$document	= JFactory::getDocument();
 
-		// Load the form validation behavior
-		JHtml::_('behavior.formvalidation');
-
-		//get vars
+		// get vars
 		$event_id = JRequest::getInt('id');
 
 		// Load css
 		JHtml::_('stylesheet', 'com_jem/backend.css', array(), true);
 
-		//Get data from the model
+		// Get data from the model
 		$row		= $this->get('Data');
 
-		//build selectlists
+		// build selectlists
 		$lists = array();
 		$lists['users'] = JHtml::_('list.users', 'uid', $row->uid, false, NULL, 'name', 0);
 
-		//assign data to template
+		// assign data to template
 		$this->lists 	= $lists;
 		$this->row		= $row;
 		$this->event 	= $event_id;
@@ -57,7 +49,7 @@ class JEMViewAttendee extends JViewLegacy {
 	 */
 	protected function addToolbar()
 	{
-		//get vars
+		// get vars
 		$cid = JRequest::getVar('cid');
 
 		if ($cid) {

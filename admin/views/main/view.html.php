@@ -6,19 +6,17 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
+
 /**
- * View class for the JEM home screen
- *
- * @package JEM
+ * View: Main
  */
 class JEMViewMain extends JViewLegacy {
 
 	public function display($tpl = null)
 	{
-		//Load pane behavior
+		// Load pane behavior
 		jimport('joomla.html.pane');
 
 		//initialise variables
@@ -30,16 +28,14 @@ class JEMViewMain extends JViewLegacy {
 		$venue 		= $this->get('VenuesData');
 		$category 	= $this->get('CategoriesData');
 
-
 		// Load css
 		JHtml::_('stylesheet', 'com_jem/backend.css', array(), true);
 
-		//assign vars to the template
+		// assign vars to the template
 		$this->events		= $events;
 		$this->venue		= $venue;
 		$this->category		= $category;
 		$this->user			= $user;
-
 
 		// add toolbar
 		$this->addToolbar();

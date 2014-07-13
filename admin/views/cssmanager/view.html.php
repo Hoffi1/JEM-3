@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die();
 
+
 /**
- * View class for the Css-manager screen
+ * View: CSS_manager
  */
 class JEMViewCssmanager extends JViewLegacy
 {

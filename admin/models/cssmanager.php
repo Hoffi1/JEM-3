@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 jimport('joomla.filesystem.file');
 
 /**
- * Model-CSSManager
+ * Model: CSS_manager
  */
 class JemModelCssmanager extends JModelLegacy
 {

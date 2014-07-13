@@ -6,15 +6,11 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * View class for the JEM userelement screen
- *
- * @package JEM
- *
+ * View: Userelement
  */
 class JEMViewUserElement extends JViewLegacy {
 

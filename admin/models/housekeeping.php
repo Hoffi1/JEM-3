@@ -6,7 +6,6 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.model');
@@ -14,7 +13,7 @@ jimport('joomla.filesystem.folder');
 jimport('joomla.filesystem.file');
 
 /**
- * Housekeeping-Model
+ * Model: Housekeeping
  */
 class JemModelHousekeeping extends JModelLegacy
 {

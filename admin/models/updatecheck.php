@@ -13,7 +13,7 @@ jimport('joomla.filesystem.file');
 
 
 /**
- * Model-Updatecheck
+ * Model: Updatecheck
  */
 class JemModelUpdatecheck extends JModelLegacy
 {

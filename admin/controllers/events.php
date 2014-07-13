@@ -11,7 +11,7 @@ defined( '_JEXEC' ) or die;
 jimport('joomla.application.component.controlleradmin');
 
 /**
- * Events Controller
+ * Controller: Events
  */
 class JemControllerEvents extends JControllerAdmin
 {

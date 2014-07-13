@@ -10,8 +10,8 @@ defined('_JEXEC') or die;
 
 
 /**
- * Venues-Model
- **/
+ * Model: Venues
+ */
 class JemModelVenues extends JModelList
 {
 	/**

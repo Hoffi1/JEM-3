@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die;
 
+
 /**
- * JEM Venue Table
+ * Table: Venue
  */
 class JEMTableVenue extends JTable
 {

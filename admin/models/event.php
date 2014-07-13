@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Model-Event
+ * Model: Event
  */
 class JemModelEvent extends JModelAdmin
 {

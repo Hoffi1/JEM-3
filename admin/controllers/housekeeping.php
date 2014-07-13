@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controller');
 
 /**
- * Housekeeping-Controller
+ * Controller: Housekeeping
  */
 class JemControllerHousekeeping extends JControllerLegacy
 {

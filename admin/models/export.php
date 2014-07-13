@@ -12,7 +12,7 @@ defined('_JEXEC') or die();
 jimport('joomla.application.component.modellist');
 
 /**
- * Model-Export
+ * Model: Export
  */
 class JemModelExport extends JModelList
 {

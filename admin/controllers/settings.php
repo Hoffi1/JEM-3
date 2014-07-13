@@ -10,7 +10,7 @@
 defined('_JEXEC') or die();
 
 /**
- * JEM Component Settings Controller
+ * Controller: Settings
  */
 class JEMControllerSettings extends JControllerLegacy
 {

@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Event View
+ * View: Event
  */
 class JemViewEvent extends JViewLegacy {
 

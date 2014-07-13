@@ -10,8 +10,8 @@ defined('_JEXEC') or die;
 
 
 /**
- * Model-Events
- **/
+ * Model: Events
+ */
 class JemModelEvents extends JModelList
 {
 	/**

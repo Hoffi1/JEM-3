@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Eventelement-View
+ * View: Eventelement
  */
 class JemViewEventelement extends JViewLegacy {
 
@@ -18,17 +18,14 @@ class JemViewEventelement extends JViewLegacy {
 	{
 		$app = JFactory::getApplication();
 
-		//initialise variables
-		$user 		= JFactory::getUser();
-		$db			= JFactory::getDBO();
-		$jemsettings = JEMAdmin::config();
-		$document	= JFactory::getDocument();
+		// initialise variables
+		$user 			= JFactory::getUser();
+		$db				= JFactory::getDBO();
+		$jemsettings	= JEMAdmin::config();
+		$document		= JFactory::getDocument();
 		$itemid 		= JRequest::getInt('id', 0) . ':' . JRequest::getInt('Itemid', 0);
 
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.modal');
-
-		//get var
+		// get var
 		$filter_order		= $app->getUserStateFromRequest('com_jem.eventelement.filter_order', 'filter_order', 'a.dates', 'cmd');
 		$filter_order_Dir	= $app->getUserStateFromRequest('com_jem.eventelement.filter_order_Dir', 'filter_order_Dir', '', 'word');
 		$filter 			= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter', 'filter', '', 'int');

@@ -11,8 +11,7 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 /**
- * Categories Model
- *
+ * Model: Categories
  */
 class JemModelCategories extends JModelList
 {

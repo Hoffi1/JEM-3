@@ -9,8 +9,9 @@
 defined('_JEXEC') or die();
 
 jimport('joomla.application.component.model');
+
 /**
- * Categoryelement-Model
+ * Model: Categoryelement
  */
 class JemModelCategoryelement extends JModelLegacy
 {

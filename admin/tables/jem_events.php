@@ -6,14 +6,11 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
+
 /**
- * JEM events Model class
- *
- * @package JEM
- *
+ * Table: Events
  */
 class jem_events extends JTable
 {

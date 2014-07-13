@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 
 /**
- * Housekeeping-View
+ * View: Housekeeping
  */
 class JemViewHousekeeping extends JViewLegacy {
 

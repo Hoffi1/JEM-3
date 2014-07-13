@@ -6,15 +6,11 @@
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
-
 defined('_JEXEC') or die;
 
 
 /**
- * View class for the JEM Settings screen
- *
- * @package JEM
- *
+ * View: Settings
  */
 class JEMViewSettings extends JViewLegacy {
 
@@ -62,13 +58,8 @@ class JEMViewSettings extends JViewLegacy {
 		// Load Script
 		$document->addScript(JURI::root().'media/com_jem/js/colorpicker.js');
 
-		JHtml::_('behavior.modal', 'a.modal');
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.formvalidation');
 		JHtml::_('behavior.framework');
-
-
-
+		
 		$app = JFactory::getApplication();
 
 		// only admins have access to this view
@@ -94,8 +85,6 @@ class JEMViewSettings extends JViewLegacy {
 
 	/**
 	 * Add the page title and toolbar.
-	 *
-	 * @since	1.6
 	 */
 	protected function addToolbar()
 	{
