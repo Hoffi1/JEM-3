@@ -2,7 +2,7 @@
 /**
  * JComments plugin for JEM
  * 
- * @version 1.9.6
+ * @version 3.0.1
  * @package JEM
  * @copyright (C) 2013-2014 joomlaeventmanager.net
  * 
@@ -10,7 +10,6 @@
  * @copyright (C) 2006-2013 by Sergey M. Litvinov (http://www.joomlatune.ru)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  */
-
 defined('_JEXEC') or die;
 
 class jc_com_jem extends JCommentsPlugin
@@ -33,7 +32,6 @@ class jc_com_jem extends JCommentsPlugin
 		$db->setQuery($query);
 		$slug = $db->loadResult();
 
-		require_once(JPATH_SITE.'/includes/application.php');
 
 		$JEMRouter = JPATH_SITE.'/components/com_jem/helpers/route.php';
 		if (is_file($JEMRouter)) {
