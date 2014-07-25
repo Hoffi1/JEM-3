@@ -24,7 +24,7 @@ class JemViewAttendees extends JViewLegacy {
 			return;
 		}
 
-		//initialise variables
+		# initialise variables
 		$db			= JFactory::getDBO();
 		$document	= JFactory::getDocument();
 		$user		= JFactory::getUser();
@@ -35,17 +35,21 @@ class JemViewAttendees extends JViewLegacy {
 		$uri 		= JFactory::getURI();
 		$print		= JRequest::getBool('print');
 
-		//redirect if not logged in
+		# redirect if not logged in
 		if (!$user->get('id')) {
 			$app->enqueueMessage(JText::_('COM_JEM_NEED_LOGGED_IN'), 'error');
 			return false;
 		}
 
-		// Load css
+		# Load css
 		JemHelper::loadCss('jem');
 		JemHelper::loadCustomTag();
 
-		//get vars
+		# load JS-files
+		JHtml::_('bootstrap.framework');
+		JHtml::_('script', 'com_jem/dropdown.js', false, true);
+		
+		# get userState
 		$filter_order		= $app->getUserStateFromRequest('com_jem.attendees.filter_order', 'filter_order', 'u.username', 'cmd');
 		$filter_order_Dir	= $app->getUserStateFromRequest('com_jem.attendees.filter_order_Dir',	'filter_order_Dir',	'', 'word');
 		$filter_waiting		= $app->getUserStateFromRequest('com_jem.attendees.waiting',	'filter_waiting',	0, 'int');
@@ -53,7 +57,7 @@ class JemViewAttendees extends JViewLegacy {
 		$search 			= $app->getUserStateFromRequest('com_jem.attendees.filter_search', 'filter_search', '', 'string');
 		$search 			= $db->escape(trim(JString::strtolower($search)));
 
-		// Get data from the model
+		# Get data from the model
 		$rows      	= $this->get('Data');
 		$pagination = $this->get('Pagination');
 		$event 		= $this->get('Event');

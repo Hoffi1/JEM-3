@@ -15,7 +15,7 @@ JHtml::_('bootstrap.tooltip');
 <div id="jem" class="jlcalendar jem_calendar<?php echo $this->pageclass_sfx;?>">
 
 <div class="topbox"></div>
-<div class="clearfix"> </div><br />
+<div class="clearfix"></div>
 <div class="info_container">
 
 

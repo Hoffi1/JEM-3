@@ -19,6 +19,7 @@ defined('_JEXEC') or die;
 	if ($this->print) { 
 		echo JemOutput::printbutton($this->print_link, $this->params);
 	} else {
+		if ($this->settings->get('show_dropwdownbutton',1)) {
 	?>
 	
 	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
@@ -28,7 +29,7 @@ defined('_JEXEC') or die;
 				<li><?php echo JemOutput::printbutton($this->print_link, $this->params);?></li>
 			</ul>
 			
-			<?php } ?>
+			<?php }} ?>
 		</div>
 	
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
@@ -38,8 +39,7 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 </div>
 	<div class="clearfix"></div>
-
-	<br>
+<!-- info -->
 	<div class="info_container">
 	
 	<?php foreach ($this->rows as $row) : ?>

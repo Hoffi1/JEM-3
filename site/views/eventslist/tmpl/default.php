@@ -39,6 +39,8 @@ if ($saveOrder)
 		Joomla.tableOrdering(order, dirn, '');
 	}
 </script>
+
+
 <div id="jem" class="jem_eventslist<?php echo $this->pageclass_sfx;?>">
 	
 <div class="topbox">	
@@ -48,17 +50,18 @@ if ($saveOrder)
 	if ($this->print) { 
 		echo JemOutput::printbutton($this->print_link, $this->params);
 	} else {
+		if ($this->settings->get('show_dropwdownbutton',1)) {
 	?>
-		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
-			<ul class="dropdown-menu">
+			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
+			<ul id="dropdown" class="dropdown-menu">
 				<li><?php echo JemOutput::submitbutton($this->dellink, $this->params);?></li>
 				<li><?php echo JemOutput::addvenuebutton($this->addvenuelink, $this->params, $this->jemsettings);?></li>
 				<li><?php echo JemOutput::archivebutton($this->params, $this->task);?></li>
 				<li><?php echo JemOutput::printbutton($this->print_link, $this->params);?></li>
 			</ul>
 			
-			<?php } ?>
-		</div>
+	<?php } } ?>
+	</div>
 </div>
 <div class="clearfix"></div>
 <!-- info -->	

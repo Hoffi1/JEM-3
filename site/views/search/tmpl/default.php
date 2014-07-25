@@ -10,7 +10,10 @@ defined('_JEXEC') or die;
 ?>
 
 <div id="jem" class="jem_search<?php echo $this->pageclass_sfx;?>">
-	
+
+<div class="topbox"></div>
+<div class="clearfix"></div>
+
 <div class="info_container">	
 	
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>

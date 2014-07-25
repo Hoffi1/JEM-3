@@ -44,11 +44,15 @@ class JemViewEventslist extends JEMView
 		JemHelper::loadCss('jem');
 		JemHelper::loadCustomCss();
 		JemHelper::loadCustomTag();
-
+		
 		if ($print) {
 			JemHelper::loadCss('print');
 			$document->setMetaData('robots', 'noindex, nofollow');
 		}
+		
+		# load JS
+		JHtml::_('bootstrap.framework');
+		JHtml::_('script', 'com_jem/dropdown.js', false, true);
 
 		// get variables
 		$task 				= JRequest::getWord('task', '');

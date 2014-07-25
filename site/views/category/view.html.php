@@ -134,10 +134,14 @@ class JemViewCategory extends JEMView
 			$menu			= $app->getMenu();
 			$menuitem		= $menu->getActive();
 
-			// Load css
+			# load css
 			JemHelper::loadCss('jem');
 			JemHelper::loadCustomCss();
 			JemHelper::loadCustomTag();
+			
+			# load JS
+			JHtml::_('bootstrap.framework');
+			JHtml::_('script', 'com_jem/dropdown.js', false, true);
 
 			//get data from model
 			$state		= $this->get('State');

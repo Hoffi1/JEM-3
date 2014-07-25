@@ -20,22 +20,21 @@ $mapType = $this->mapType;
 	if ($this->print) { 
 		echo JemOutput::printbutton($this->print_link, $this->params);
 	} else {
+		if ($this->settings->get('show_dropwdownbutton',1)) {
 	?>
-				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
-				<ul class="dropdown-menu">
-						<li class="print-icon"> <?php echo JemOutput::printbutton($this->print_link, $this->params); ?> </li>
-						<li class="email-icon"> <?php echo JemOutput::mailbutton($this->venue->slug, 'venue', $this->params); ?> </li>
-						<li class="submit-icon"><?php echo JemOutput::submitbutton($this->addeventlink, $this->params); ?></li>
-						<li class="addvenue-icon"><?php echo JemOutput::addvenuebutton($this->addvenuelink, $this->params, $this->jemsettings);?></li>
-						<li class="archive-icon"><?php echo JemOutput::archivebutton($this->params, $this->task, $this->venue->slug);?></li>
-				</ul>
-				
-	<?php } ?>			
-			</div>
+		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
+		<ul id="dropdown" class="dropdown-menu">
+			<li><?php echo JemOutput::printbutton($this->print_link, $this->params); ?></li>
+			<li><?php echo JemOutput::mailbutton($this->venue->slug, 'venue', $this->params); ?></li>
+			<li><?php echo JemOutput::submitbutton($this->addeventlink, $this->params); ?></li>
+			<li><?php echo JemOutput::addvenuebutton($this->addvenuelink, $this->params, $this->jemsettings);?></li>
+			<li><?php echo JemOutput::archivebutton($this->params, $this->task, $this->venue->slug);?></li>
+		</ul>		
+	<?php }} ?>			
+	</div>
 </div>
-	<div class="clearfix"> </div><br />
-
-	
+<div class="clearfix"></div>
+<!-- info -->
 <div class="info_container">	
 	
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>

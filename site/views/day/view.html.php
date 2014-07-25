@@ -55,6 +55,10 @@ class JemViewDay extends JEMView
 		JemHelper::loadCss('jem');
 		JemHelper::loadCustomCss();
 		JemHelper::loadCustomTag();
+		
+		# load JS
+		JHtml::_('bootstrap.framework');
+		JHtml::_('script', 'com_jem/dropdown.js', false, true);
 
 		// get variables
 		$itemid 			= JRequest::getInt('id', 0) . ':' . JRequest::getInt('Itemid', 0);

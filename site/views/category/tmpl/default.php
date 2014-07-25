@@ -9,34 +9,30 @@
 defined('_JEXEC') or die;
 
 JHtml::_('bootstrap.tooltip');
-JHtml::_('behavior.modal');
+JHtml::_('behavior.modal','a.flyermodal');
 ?>
 <div id="jem" class="jem_category<?php echo $this->pageclass_sfx;?>">
-	
-	
 <div class="topbox">
 	<div class="btn-group pull-right">
 	<?php 
 	if ($this->print) { 
 		echo JemOutput::printbutton($this->print_link, $this->params);
 	} else {
+		if ($this->settings->get('show_dropwdownbutton',1)) {
 	?>
-	
 			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
 			<ul class="dropdown-menu">
 				<li><?php echo JemOutput::submitbutton($this->dellink, $this->params);?></li>
-				<li class="addvenue-icon"><?php echo JemOutput::addvenuebutton($this->addvenuelink, $this->params, $this->jemsettings);?></li>
+				<li><?php echo JemOutput::addvenuebutton($this->addvenuelink, $this->params, $this->jemsettings);?></li>
 				<li><?php echo JemOutput::archivebutton($this->params, $this->task, $this->category->slug);?></li>
 				<li><?php echo JemOutput::mailbutton($this->category->slug, 'category', $this->params);?></li>
 				<li><?php echo JemOutput::printbutton($this->print_link, $this->params);?></li>
 			</ul>
-		<?php } ?>			
+		<?php }} ?>			
 	</div>
 </div>
-	
-<div class="clearfix"></div><br>
-
-<!-- INFO -->
+<div class="clearfix"></div>
+<!--info-->
 <div class="info_container">	
 	
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
@@ -84,14 +80,9 @@ JHtml::_('behavior.modal');
 		<?php endif; ?>
 	</div></div></div>
 	
-	
-		
-
 		<h2 class="description"><?php echo JText::_('COM_JEM_EVENT_DESCRIPTION'); ?></h2>
 		<p><?php echo $this->description; ?></p>
 	
-
-
 	<!--subcategories-->
 	<?php
 	if ($this->maxLevel != 0 && !empty($this->category->id) && !empty($this->children[$this->category->id])) {

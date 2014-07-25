@@ -382,7 +382,7 @@ class JemViewEvent extends JEMView
 		$pathway = $app->getPathway();
 		$title = null;
 
-		// add css file
+		# load CSS
 		JemHelper::loadCss('jem');
 		JemHelper::loadCustomCss();
 		JemHelper::loadCustomTag();
@@ -391,6 +391,10 @@ class JemViewEvent extends JEMView
 			JemHelper::loadCss('print');
 			$this->document->setMetaData('robots', 'noindex, nofollow');
 		}
+		
+		# load JS
+		JHtml::_('bootstrap.framework');
+		JHtml::_('script', 'com_jem/dropdown.js', false, true);
 
 	/*
 		// Because the application sets a default page title,

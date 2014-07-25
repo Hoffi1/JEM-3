@@ -20,7 +20,6 @@ defined('_JEXEC') or die;
 
 	<!--table-->
 	<div class="clearfix"></div>
-	<br>
 	<div class="info_container">
 	<?php echo $this->loadTemplate('attendances');?>
 	</div>

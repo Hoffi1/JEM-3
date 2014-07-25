@@ -10,6 +10,10 @@ defined('_JEXEC') or die;
 ?>
 
 <div id="jem" class="jlcalendar jem_calendar<?php echo $this->pageclass_sfx;?>">
+<div class="topbox"></div>
+<div class="clearfix"></div>
+<div class="info_container">
+
 	<?php if ($this->params->get('show_page_heading', 1)): ?>
 		<h1>
 			<?php echo $this->escape($this->params->get('page_heading')); ?>
@@ -209,4 +213,4 @@ defined('_JEXEC') or die;
 	<div class="poweredby">
 		<?php echo JemOutput::footer(); ?>
 	</div>
-</div>
+</div></div>

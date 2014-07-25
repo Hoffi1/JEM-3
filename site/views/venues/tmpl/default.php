@@ -11,16 +11,14 @@ defined('_JEXEC') or die;
 
 ?>
 <div id="jem" class="jem_venues<?php echo $this->pageclass_sfx;?>">
-
-
 <div class="topbox">
-
 <div class="btn-group pull-right">
 	
 	<?php 
 	if ($this->print) { 
 		echo JemOutput::printbutton($this->print_link, $this->params);
 	} else {
+		if ($this->settings->get('show_dropwdownbutton',1)) {
 	?>
 		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
 			<ul class="dropdown-menu">
@@ -29,12 +27,11 @@ defined('_JEXEC') or die;
 				<li><?php echo JemOutput::printbutton($this->print_link, $this->params);?></li>
 			</ul>
 			
-			<?php } ?>
+			<?php }} ?>
 		</div>
 </div>
 <div class="clearfix"></div>
-<br>		
-		
+<!-- info -->
 <div class="info_container">
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
 	<h1>

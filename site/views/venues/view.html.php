@@ -41,6 +41,10 @@ class JemViewVenues extends JViewLegacy
 			JemHelper::loadCss('print');
 			$document->setMetaData('robots', 'noindex, nofollow');
 		}
+		
+		# load JS
+		JHtml::_('bootstrap.framework');
+		JHtml::_('script', 'com_jem/dropdown.js', false, true);
 
 		// Request variables
 		$task 	= JRequest::getWord('task');
