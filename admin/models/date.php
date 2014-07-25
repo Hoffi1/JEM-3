@@ -58,7 +58,7 @@ class JEMModelDate extends JModelAdmin
 	 * @return	JTable	A database object
 	 *
 	 */
-	public function getTable($type = 'Date', $prefix = 'JEMTable', $config = array())
+	public function getTable($type = 'Dates', $prefix = 'JEMTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

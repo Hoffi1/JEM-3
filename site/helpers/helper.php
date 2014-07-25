@@ -1377,7 +1377,7 @@ class JemHelper {
 		}
 
 		# define fields
-		$rec_master	= JTable::getInstance('Recurrencemaster', 'JEMTable');
+		$rec_master	= JTable::getInstance('Recurrence_master', 'JEMTable');
 		$rec_master->itemid 		= $table->id;
 		$rec_master->groupid		= $table->recurrence_group;
 		$rec_master->groupid_ref	= $table->recurrence_group;
@@ -1395,7 +1395,7 @@ class JemHelper {
 
 		foreach($new_generating_array as $value){
 			# load tables
-			$new_event 				= JTable::getInstance('Event', 'JEMTable');
+			$new_event 				= JTable::getInstance('Events', 'JEMTable');
 			$new_event_recurrence	= JTable::getInstance('Recurrence', 'JEMTable');
 
 			# bind reference-values + strip out individual fields

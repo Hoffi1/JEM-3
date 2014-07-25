@@ -73,7 +73,7 @@ abstract class JemAttachment {
 			$filepath = JPath::clean( $path.'/'.$sanitizedFilename);
 			JFile::upload($post_files['tmp_name'][$k], $filepath);
 
-			$table = JTable::getInstance('jem_attachments', '');
+			$table = JTable::getInstance('Attachments', 'JEMTable');
 			$table->file = $sanitizedFilename;
 			$table->object = $object;
 			if (isset($post_files['customname'][$k]) && !empty($post_files['customname'][$k])) {
@@ -104,7 +104,7 @@ abstract class JemAttachment {
 		if (!is_array($attach) || !isset($attach['id']) || !(intval($attach['id']))) {
 			return false;
 		}
-		$table = JTable::getInstance('jem_attachments', '');
+		$table = JTable::getInstance('Attachments', 'JEMTable');
 		$table->load($attach['id']);
 		$table->bind($attach);
 		if (!($table->check() && $table->store())) {

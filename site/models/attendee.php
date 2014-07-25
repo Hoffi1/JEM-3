@@ -106,7 +106,7 @@ class JemModelAttendee extends JModelLegacy
 	{
 		// Lets load the content if it doesn't already exist
 		if (empty($this->_data)) {
-			$data = JTable::getInstance('jem_register', '');
+			$data = JTable::getInstance('Register', 'JEMTable');
 			$data->username = null;
 			$this->_data = $data;
 		}
@@ -122,7 +122,7 @@ class JemModelAttendee extends JModelLegacy
 			return false;
 		}
 
-		$row = JTable::getInstance('jem_register', '');
+		$row = JTable::getInstance('Register', 'JEMTable');
 		$row->bind($attendee);
 		$row->waiting = $attendee->waiting ? 0 : 1;
 		return $row->store();

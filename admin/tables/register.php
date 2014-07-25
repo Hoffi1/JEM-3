@@ -2,7 +2,7 @@
 /**
  * @version 3.0.1
  * @package JEM
- * @copyright (C) 2013-2013 joomlaeventmanager.net
+ * @copyright (C) 2013-2014 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
@@ -10,41 +10,28 @@ defined('_JEXEC') or die;
 
 
 /**
- * Table: Dates
+ * Table: Register
  */
-class JEMTableDates extends JTable
+class JEMTableRegister extends JTable
 {
-	public function __construct(&$db) {
-		parent::__construct('#__jem_dates', 'id', $db);
-	}
-
 	/**
-	 * Bind.
+	 * Primary Key
+	 * @var int
 	 */
-	public function bind($array, $ignore = ''){
-		
+	var $id 		= null;
+	/** @var int */
+	var $event 		= null;
+	/** @var int */
+	var $uid 		= null;
+	/** @var date */
+	var $uregdate 	= null;
+	/** @var string */
+	var $uip 		= null;
+	/** @var int */
+	var $waiting 	= 0;
 
-		return parent::bind($array, $ignore);
-	}
-
-
-	/**
-	 * Check
-	 */
-	function check() {
-		
-	
-		return true;
-	}
-
-	/**
-	 * Store
-	 */
-	public function store($updateNulls = true)
-	{		
-		
-
-		return parent::store($updateNulls);
+	public function __construct(& $db) {
+		parent::__construct('#__jem_register', 'id', $db);
 	}
 
 	/**
@@ -79,7 +66,6 @@ class JEMTableDates extends JTable
 	{
 		$fmtsql = 'INSERT IGNORE INTO '.$this->_db->quoteName($table).' (%s) VALUES (%s) ';
 		$fields = array();
-
 		foreach (get_object_vars($object) as $k => $v) {
 			if (is_array($v) or is_object($v) or $v === NULL) {
 				continue;
@@ -88,9 +74,8 @@ class JEMTableDates extends JTable
 				continue;
 			}
 			$fields[] = $this->_db->quoteName($k);
-			$values[] = $this->_db->isQuoted($k) ? $this->_db->quote($v) : (int) $v;
+			$values[] = $this->_db->quote($v);
 		}
-
 		$this->_db->setQuery(sprintf($fmtsql, implode(",", $fields), implode(",", $values)));
 		if (!$this->_db->query()) {
 			return false;
@@ -99,7 +84,6 @@ class JEMTableDates extends JTable
 		if ($keyName && $id) {
 			$object->$keyName = $id;
 		}
-
 		return $this->_db->getAffectedRows();
 	}
 }

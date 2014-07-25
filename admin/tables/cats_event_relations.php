@@ -2,7 +2,7 @@
 /**
  * @version 3.0.1
  * @package JEM
- * @copyright (C) 2013-2013 joomlaeventmanager.net
+ * @copyright (C) 2013-2014 joomlaeventmanager.net
  * @copyright (C) 2005-2009 Christoph Lukes
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
@@ -10,41 +10,42 @@ defined('_JEXEC') or die;
 
 
 /**
- * Table: Dates
+ * Table: Cats_event_relations
  */
-class JEMTableDates extends JTable
+class JEMTableCats_event_relations extends JTable
 {
-	public function __construct(&$db) {
-		parent::__construct('#__jem_dates', 'id', $db);
+	/**
+	 * Primary Key
+	 * @var int
+	 */
+	var $id = null;
+	/**
+	 * Category ID
+	 * @var int
+	 */
+	var $catid = null;
+	/**
+	 * Event ID
+	 * @var int
+	 */
+	var $itemid = null;
+	/**
+	 * Ordering
+	 * @var int
+	 * @todo implement
+	 */
+	var $ordering = null;
+
+	public function __construct(& $db) {
+		parent::__construct('#__jem_cats_event_relations', 'id', $db);
 	}
 
 	/**
-	 * Bind.
+	 * check
 	 */
-	public function bind($array, $ignore = ''){
-		
-
-		return parent::bind($array, $ignore);
-	}
-
-
-	/**
-	 * Check
-	 */
-	function check() {
-		
-	
+	function check()
+	{
 		return true;
-	}
-
-	/**
-	 * Store
-	 */
-	public function store($updateNulls = true)
-	{		
-		
-
-		return parent::store($updateNulls);
 	}
 
 	/**
@@ -79,7 +80,6 @@ class JEMTableDates extends JTable
 	{
 		$fmtsql = 'INSERT IGNORE INTO '.$this->_db->quoteName($table).' (%s) VALUES (%s) ';
 		$fields = array();
-
 		foreach (get_object_vars($object) as $k => $v) {
 			if (is_array($v) or is_object($v) or $v === NULL) {
 				continue;
@@ -88,9 +88,8 @@ class JEMTableDates extends JTable
 				continue;
 			}
 			$fields[] = $this->_db->quoteName($k);
-			$values[] = $this->_db->isQuoted($k) ? $this->_db->quote($v) : (int) $v;
+			$values[] = $this->_db->quote($v);
 		}
-
 		$this->_db->setQuery(sprintf($fmtsql, implode(",", $fields), implode(",", $values)));
 		if (!$this->_db->query()) {
 			return false;
@@ -99,7 +98,6 @@ class JEMTableDates extends JTable
 		if ($keyName && $id) {
 			$object->$keyName = $id;
 		}
-
 		return $this->_db->getAffectedRows();
 	}
 }

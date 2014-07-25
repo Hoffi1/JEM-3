@@ -20,8 +20,8 @@ class JEMTableSettings extends JTable
 	}
 
 
-	/*
-	 * Validators
+	/**
+	 * check
 	 */
 	function check()
 	{
@@ -30,7 +30,7 @@ class JEMTableSettings extends JTable
 
 
 	/**
-	 * Overloaded the store method
+	 * store
 	 */
 	public function store($updateNulls = false)
 	{
@@ -38,6 +38,10 @@ class JEMTableSettings extends JTable
 	}
 
 
+	/**
+	 * Bind
+	 * @see JTable::bind()
+	 */
 	public function bind($array, $ignore = '')
 	{
 

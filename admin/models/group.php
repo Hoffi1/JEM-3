@@ -66,7 +66,7 @@ class JemModelGroup extends JModelAdmin
 	 * @return	JTable	A database object
 	 *
 	 */
-	public function getTable($type = 'Group', $prefix = 'JEMTable', $config = array())
+	public function getTable($type = 'Groups', $prefix = 'JEMTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}

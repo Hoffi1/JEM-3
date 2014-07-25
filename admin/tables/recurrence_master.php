@@ -12,14 +12,14 @@ defined('_JEXEC') or die;
 /**
  * Table: Recurrence_master
  */
-class JEMTableRecurrencemaster extends JTable
+class JEMTableRecurrence_master extends JTable
 {
 	public function __construct(&$db) {
 		parent::__construct('#__jem_recurrence_master', 'id', $db);
 	}
 
 	/**
-	 * Overloaded bind method for the Event table.
+	 * bind
 	 */
 	public function bind($array, $ignore = ''){
 		
@@ -29,7 +29,7 @@ class JEMTableRecurrencemaster extends JTable
 
 
 	/**
-	 * overloaded check function
+	 * check
 	 */
 	function check()
 	{
@@ -38,7 +38,7 @@ class JEMTableRecurrencemaster extends JTable
 	}
 
 	/**
-	 * store method for the Event table.
+	 * store
 	 */
 	public function store($updateNulls = true)
 	{
