@@ -59,26 +59,21 @@ abstract class modJEMHelper
 			$model->setState('filter.orderby',array('a.dates DESC','a.times DESC'));
 			$cal_from = "";
 		}
-		
-		
+			
 		$model->setState('filter.calendar_from',$cal_from);
 		$model->setState('filter.groupby','a.id');
 		
-
 		$catid 	= trim($params->get('catid'));
 		$venid 	= trim($params->get('venid'));
 
 		if ($catid) {
 			$ids = explode(',', $catid);
-			JArrayHelper::toInteger($ids);
 			$categories = ' AND (c.id=' . implode(' OR c.id=', $ids) . ')';
 		}
 		if ($venid) {
 			$ids = explode(',', $venid);
-			JArrayHelper::toInteger($ids);
 			$venues = ' AND (l.id=' . implode(' OR l.id=', $ids) . ')';
 		}
-		
 		
 		# count
 		$count = $params->get('count', '2');

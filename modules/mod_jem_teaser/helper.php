@@ -83,16 +83,14 @@ abstract class modJEMteaserHelper
 		
 		# filter category's
 		if ($catid) {
-			$ids = explode(',', $catid);
-			$ids = JArrayHelper::toInteger($ids);
+			$ids = explode(',', $catid);			
 			$model->setState('filter.category_id',$ids);
 			$model->setState('filter.category_id.include',true);
 		}
-
+		
 		# filter venue's
 		if ($venid) {
 			$ids = explode(',', $venid);
-			$ids = JArrayHelper::toInteger($ids);
 			$model->setState('filter.venue_id',$ids);
 			$model->setState('filter.venue_id.include',true);
 		}
@@ -108,7 +106,7 @@ abstract class modJEMteaserHelper
 		$count = $params->get('count', '2');
 
 		if ($params->get('use_modal', 0)) {
-		JHtml::_('behavior.modal', 'a.flyermodal');
+			JHtml::_('behavior.modal', 'a.flyermodal');
 		}
 
 		$model->setState('list.limit',$count);
