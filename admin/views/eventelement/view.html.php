@@ -28,9 +28,9 @@ class JemViewEventelement extends JViewLegacy {
 		// get var
 		$filter_order		= $app->getUserStateFromRequest('com_jem.eventelement.filter_order', 'filter_order', 'a.dates', 'cmd');
 		$filter_order_Dir	= $app->getUserStateFromRequest('com_jem.eventelement.filter_order_Dir', 'filter_order_Dir', '', 'word');
-		$filter 			= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter', 'filter', '', 'int');
-		$filter_state 		= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter_state', 'filter_state', '', 'string');
-		$search 			= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter_search', 'filter_search', '', 'string');
+		$filter_type 		= $app->getUserStateFromRequest('com_jem.eventelement.filter_type', 'filter_type', '', 'int');
+		$filter_state 		= $app->getUserStateFromRequest('com_jem.eventelement.filter_state', 'filter_state', '', 'string');
+		$search 			= $app->getUserStateFromRequest('com_jem.eventelement.filter_search', 'filter_search', '', 'string');
 		$search 			= $db->escape(trim(JString::strtolower($search)));
 
 		//prepare the document
@@ -56,7 +56,7 @@ class JemViewEventelement extends JViewLegacy {
 		$filters[] = JHtml::_('select.option', '2', JText::_('COM_JEM_VENUE'));
 		$filters[] = JHtml::_('select.option', '3', JText::_('COM_JEM_CITY'));
 		//$filters[] = JHtml::_('select.option', '4', JText::_('COM_JEM_CATEGORY'));
-		$lists['filter'] = JHtml::_('select.genericlist', $filters, 'filter', array('size'=>'1','class'=>'inputbox'), 'value', 'text', $filter);
+		$lists['filter'] = JHtml::_('select.genericlist', $filters, 'filter_type', array('size'=>'1','class'=>'inputbox'), 'value', 'text', $filter_type);
 
 		// search filter
 		$lists['search']= $search;

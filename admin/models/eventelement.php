@@ -191,9 +191,9 @@ class JemModelEventelement extends JModelLegacy
 		$levels			= $user->getAuthorisedViewLevels();
 		$itemid 		= JRequest::getInt('id', 0) . ':' . JRequest::getInt('Itemid', 0);
 
-		$published 		= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter_state', 'filter_state', '', 'string');
-		$filter 		= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter', 'filter', '', 'int');
-		$search 		= $app->getUserStateFromRequest('com_jem.eventelement.'.$itemid.'.filter_search', 'filter_search', '', 'string');
+		$published 		= $app->getUserStateFromRequest('com_jem.eventelement.filter_state', 'filter_state', '', 'string');
+		$filter_type	= $app->getUserStateFromRequest('com_jem.eventelement.filter_type', 'filter_type', '', 'int');
+		$search 		= $app->getUserStateFromRequest('com_jem.eventelement.filter_search', 'filter_search', '', 'string');
 		$search 		= $this->_db->escape(trim(JString::strtolower($search)));
 		
 		$where = array();
@@ -207,8 +207,8 @@ class JemModelEventelement extends JModelLegacy
 		
 		$where[] = ' c.published = 1';
 		$where[] = ' c.access IN (' . implode(',', $levels) . ')';
-		
-		switch($filter) {
+			
+		switch($filter_type) {
 			case 1:
 				$where[] = ' LOWER(a.title) LIKE \'%'.$search.'%\' ';
 				break;

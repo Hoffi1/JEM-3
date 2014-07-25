@@ -16,6 +16,9 @@ $function = JRequest::getCmd('function', 'jSelectEvent');
 <form action="index.php?option=com_jem&amp;view=eventelement&amp;tmpl=component" method="post" name="adminForm" id="adminForm">
 	<fieldset class="filter clearfix">
 		<div class="btn-toolbar">
+			<div class="btn-group pull-left">
+				<?php echo $this->lists['filter']; ?>
+			</div>
 			<div class="btn-group pull-left input-append">
 				<input type="text" name="filter_search" id="filter_search" placeholder="<?php echo JText::_('COM_JEM_SEARCH');?>" value="<?php echo $this->lists['search']; ?>" class="inputbox" onChange="this.form.submit();" />
 				<button type="submit" class="btn"><i class="icon-search"></i></button>
