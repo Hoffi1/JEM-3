@@ -101,7 +101,7 @@ class JEMViewSettings extends JViewLegacy {
 	function WarningIcon()
 	{
 		$url = JURI::root();
-		$tip = '<img src="'.$url.'media/system/images/tooltip.png" border="0"  alt="" />';
+		$tip = JHtml::_('image', 'system/tooltip.png', null, NULL, true);
 
 		return $tip;
 	}

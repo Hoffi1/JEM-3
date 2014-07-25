@@ -33,7 +33,6 @@ defined('_JEXEC') or die;
 		$this->activeFilters	= $this->get('ActiveFilters');
 		$this->settings			= $settings;
 		$params 				= $this->state->get('params');
-		// highlighter
 		$highlighter 			= $settings->get('highlight','0');
 
 		// Check for errors.
