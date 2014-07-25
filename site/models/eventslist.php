@@ -56,7 +56,6 @@ class JemModelEventslist extends JModelList
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
-
 		$app				= JFactory::getApplication();
 		$jemsettings		= JemHelper::config();
 		$jinput             = JFactory::getApplication()->input;
@@ -208,7 +207,7 @@ class JemModelEventslist extends JModelList
 	 * Build the query
 	 */
 	protected function getListQuery()
-	{
+	{		
 		$app 			= JFactory::getApplication();
 		$jinput 		= JFactory::getApplication()->input;
 		$task 			= $jinput->get('task','','cmd');
@@ -368,6 +367,24 @@ class JemModelEventslist extends JModelList
 			$query->where('a.locid = '.$filter_locid);
 		}
 
+		
+		####################
+		## FILTER - VENUE ##
+		####################
+		
+		$venueId = $this->getState('filter.venue_id');
+		
+		if (is_numeric($venueId)) {
+			$type = $this->getState('filter.venue_id.include', true) ? '= ' : '<> ';
+			$query->where('l.id '.$type.(int) $venueId);
+		}
+		elseif (is_array($venueId)) {
+			JArrayHelper::toInteger($venueId);
+			$venueId = implode(',', $venueId);
+			$type = $this->getState('filter.venue_id.include', true) ? 'IN' : 'NOT IN';
+			$query->where('l.id '.$type.' ('.$venueId.')');
+		}
+		
 
 		###################
 		## FILTER-SEARCH ##
@@ -601,8 +618,7 @@ class JemModelEventslist extends JModelList
 		}
 
 		# Filter by a single or group of categories.
-		$categoryId = $this->getState('filter.category_id');
-
+		$categoryId = $this->getState('filter.category_id');		
 		if (is_numeric($categoryId)) {
 		$type = $this->getState('filter.category_id.include', true) ? '= ' : '<> ';
 				$query->where('c.id '.$type.(int) $categoryId);
@@ -620,26 +636,6 @@ class JemModelEventslist extends JModelList
 		if ($requestCategoryId) {
 			$query->where('c.id = '.$requestCategoryId);
 		}
-
-
-		####################
-		## FILTER - VENUE ##
-		####################
-
-		$venueId = $this->getState('filter.venue_id');
-
-		if (is_numeric($venueId)) {
-			$type = $this->getState('filter.venue_id.include', true) ? '= ' : '<> ';
-			$query->where('l.id '.$type.(int) $venueId);
-		}
-		elseif (is_array($venueId)) {
-			JArrayHelper::toInteger($venueId);
-			$venueId = implode(',', $venueId);
-			$type = $this->getState('filter.venue_id.include', true) ? 'IN' : 'NOT IN';
-			$query->where('l.id '.$type.' ('.$venueId.')');
-		}
-
-
 
 		###################
 		## FILTER-SEARCH ##
